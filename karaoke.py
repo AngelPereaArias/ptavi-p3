@@ -9,7 +9,7 @@ import json
 
 def Format_Trunk(Trunk):
 	for i in range(len(Trunk)):
-		print(Trunk[i])
+		print(Trunk[i].key)
 
 if __name__ == "__main__":
 
