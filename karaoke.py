@@ -13,7 +13,7 @@ def Create_Json(doc):
 	'''
 	Rewrites the doc collection into a .json file
 	'''
-	
+
 	json_file = open(sys.argv[1][:-5] + ".json", "w")
 	json.dump(doc, json_file)
 	json_file.close()
@@ -29,6 +29,8 @@ def Format_Trunk(Trunk):
 		for key in dict_trunk:
 			doc = doc + key + "\t"
 			for key_2 in dict_trunk[key]:
+				if key_2 = "src":
+					print(" SRCCCCCCCCCCCC ")
 				doc = doc + key_2 + '="' + dict_trunk[key][key_2] + '"' + "\t"
 			doc = doc + "\n"
 	return doc
