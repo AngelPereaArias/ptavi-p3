@@ -8,8 +8,14 @@ import sys
 import json
 
 def Format_Trunk(Trunk):
-	for i in range(len(Trunk)):
-		print(Trunk[i].key)
+	doc = ""
+	for dict_trunk in Trunk:
+		for key in dict_trunk:
+			doc = doc + key + "\t"
+			for key_2 in dict_trunk[key]:
+				doc = doc + key_2 + '="' + dict_trunk[key][key_2] + '"' + "\t"
+			doc = doc + "\n"
+	print(doc)
 
 if __name__ == "__main__":
 
