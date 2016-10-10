@@ -32,12 +32,12 @@ class KaraokeLocal(SmallSMILHandler):
                         dict_trunk[key][key_2] = url[url.rfind("/")+1:]
                         urlretrieve(url)
 
-    def to_json(self, File, File_Name = ""):
+    def to_json(self, File, File_Name=""):
         '''
         Rewrites the Trunk collection into a .json file
         '''
         if File_Name:
-        	File = File_Name
+            File = File_Name
         json_file = open(File, "w")
         json.dump(self.Trunk, json_file, separators=(',', ': '), indent=4)
         json_file.close()
@@ -53,8 +53,8 @@ class KaraokeLocal(SmallSMILHandler):
         for dict_trunk in self.Trunk:
             for key in dict_trunk:
                 doc = doc + key + "\t"
-                for key_2 in dict_trunk[key]:
-                    doc = doc + key_2 + '="' + dict_trunk[key][key_2] + '"' + "\t"
+                for k_2 in dict_trunk[key]:
+                    doc = doc + k_2 + '="' + dict_trunk[key][k_2] + '"' + "\t"
                 doc = doc + "\n"
         print(doc)
         return(doc)
