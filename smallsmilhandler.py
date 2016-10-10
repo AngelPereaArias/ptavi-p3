@@ -4,16 +4,16 @@
 from xml.sax import make_parser
 from xml.sax.handler import ContentHandler
 
+
 class SmallSMILHandler(ContentHandler):
 
     def __init__(self):
         self.trunk = []
-        self.General = {"root-layout" : ["width", "height", "background-color"],
-                    "region" : ["id", "top", "bottom", "left", "right"],
-                    "img" : ["src", "region", "begin", "dur"],
-                    "audio" : ["src", "begin", "dur"],
-                    "textstreams" : ["src", "region"]}
-
+        self.General = {"root-layout": ["width", "height", "background-color"],
+                    "region": ["id", "top", "bottom", "left", "right"],
+                    "img": ["src", "region", "begin", "dur"],
+                    "audio": ["src", "begin", "dur"],
+                    "textstream": ["src", "region"]}
 
     def startElement(self, name, attrs):
 
@@ -22,7 +22,7 @@ class SmallSMILHandler(ContentHandler):
             for i in self.General[name]:
                 Value_Box[i] = attrs.get(i, "Empty attrs")
 
-            General_Slice = {name : Value_Box}
+            General_Slice = {name: Value_Box}
             self.trunk.append(General_Slice)
 
     def get_tags(self):
