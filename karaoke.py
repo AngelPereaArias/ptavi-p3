@@ -71,3 +71,4 @@ if __name__ == "__main__":
     Fich.do_local()
     Fich.to_json(Fich_Json, "local.json")
     Fich.__str__()
+    
